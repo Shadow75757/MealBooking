@@ -7,7 +7,7 @@ if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
 
 include('../connect_db.php');
 
-// Fetch bookings for admin - removing the "has_booked" condition for testing
+// Fetch bookings for admin
 $sql = "SELECT users.username, meals.name AS meal_name, meals.price, bookings.observation 
         FROM bookings 
         JOIN users ON bookings.user_id = users.id
@@ -19,11 +19,6 @@ if (!$stmt) {
 }
 $stmt->execute();
 $bookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-if (!$bookings) {
-    echo "Error fetching data: " . $stmt->errorInfo()[2];
-    die();  // Prevent rendering of the page if there is a query error
-}
 
 // Fetch total number of users
 $totalUsersSql = "SELECT COUNT(*) AS total_users FROM users";
@@ -42,7 +37,7 @@ foreach ($bookings as $booking) {
     }
 }
 ?>
-
+<style></style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,9 +45,21 @@ foreach ($bookings as $booking) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin | Booked Meals</title>
     <link rel="stylesheet" href="admin.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- For arrow icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- Header with Navigation Links -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="user_managment/add_user.php">Add User</a></li>
+                <li><a href="user_managment/view_users.php">View/Edit Users</a></li>
+                <li><a href="user_managment/add_meal.php">Add Meal</a></li>
+                <li><a href="user_managment/manage_bookings.php">Manage Bookings</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="container">
         <h1>Booked Meals Overview</h1>
         
