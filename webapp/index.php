@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meal Booking Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
@@ -34,6 +34,10 @@
             title: 'Login Failed',
             text: 'Incorrect username or password!',
             confirmButtonText: 'Try Again'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.history.replaceState(null, null, window.location.pathname);
+            }
         });
         </script>
         ";
