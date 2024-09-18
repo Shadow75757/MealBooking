@@ -53,12 +53,13 @@ foreach ($bookings as $booking) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin | Booked Meals</title>
     <link rel="stylesheet" href="admin.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/076868c758.js" crossorigin="anonymous"></script>
     <style>
         th {
             cursor: pointer;
@@ -73,6 +74,7 @@ foreach ($bookings as $booking) {
         }
     </style>
 </head>
+
 <body>
     <!-- Header with Navigation Links -->
     <header>
@@ -88,7 +90,7 @@ foreach ($bookings as $booking) {
 
     <div class="container">
         <h1>Booked Meals Overview</h1>
-        
+
         <!-- Stats Cards -->
         <div class="stats-cards">
             <div class="card">
@@ -109,27 +111,27 @@ foreach ($bookings as $booking) {
         <table id="bookings-table">
             <thead>
                 <tr>
-                    <th class="<?= $sortColumn === 'username' ? ($sortOrder === 'ASC' ? 'sorted-asc' : 'sorted-desc') : '' ?>" 
+                    <th class="<?= $sortColumn === 'username' ? ($sortOrder === 'ASC' ? 'sorted-asc' : 'sorted-desc') : '' ?>"
                         onclick="window.location.href='?sort=username&order=<?= $sortOrder === 'ASC' ? 'DESC' : 'ASC' ?>'">
-                        Username 
+                        Username
                         <i class="fa-solid fa-circle-arrow-up"></i>
                         <i class="fa-solid fa-circle-arrow-down"></i>
                     </th>
-                    <th class="<?= $sortColumn === 'meal_name' ? ($sortOrder === 'ASC' ? 'sorted-asc' : 'sorted-desc') : '' ?>" 
+                    <th class="<?= $sortColumn === 'meal_name' ? ($sortOrder === 'ASC' ? 'sorted-asc' : 'sorted-desc') : '' ?>"
                         onclick="window.location.href='?sort=meal_name&order=<?= $sortOrder === 'ASC' ? 'DESC' : 'ASC' ?>'">
-                        Meal 
+                        Meal
                         <i class="fa-solid fa-circle-arrow-up"></i>
                         <i class="fa-solid fa-circle-arrow-down"></i>
                     </th>
-                    <th class="<?= $sortColumn === 'price' ? ($sortOrder === 'ASC' ? 'sorted-asc' : 'sorted-desc') : '' ?>" 
+                    <th class="<?= $sortColumn === 'price' ? ($sortOrder === 'ASC' ? 'sorted-asc' : 'sorted-desc') : '' ?>"
                         onclick="window.location.href='?sort=price&order=<?= $sortOrder === 'ASC' ? 'DESC' : 'ASC' ?>'">
-                        Price 
+                        Price
                         <i class="fa-solid fa-circle-arrow-up"></i>
                         <i class="fa-solid fa-circle-arrow-down"></i>
                     </th>
-                    <th class="<?= $sortColumn === 'observation' ? ($sortOrder === 'ASC' ? 'sorted-asc' : 'sorted-desc') : '' ?>" 
+                    <th class="<?= $sortColumn === 'observation' ? ($sortOrder === 'ASC' ? 'sorted-asc' : 'sorted-desc') : '' ?>"
                         onclick="window.location.href='?sort=observation&order=<?= $sortOrder === 'ASC' ? 'DESC' : 'ASC' ?>'">
-                        Observation 
+                        Observation
                         <i class="fa-solid fa-circle-arrow-up"></i>
                         <i class="fa-solid fa-circle-arrow-down"></i>
                     </th>
@@ -146,7 +148,9 @@ foreach ($bookings as $booking) {
                         </tr>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <tr><td colspan="4">No bookings found.</td></tr>
+                    <tr>
+                        <td colspan="4">No bookings found.</td>
+                    </tr>
                 <?php endif; ?>
             </tbody>
         </table>
