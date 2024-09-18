@@ -11,6 +11,12 @@ body {
   min-height: 100vh;
 }
 
+textarea {
+  width: 98%;
+  height: 90px;
+  resize: none;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -103,7 +109,7 @@ h2 {
   width: 100%;
   padding: 10px;
   font-size: 16px;
-  background-color: #28a745;
+  background-color: #3f6fa7;
   color: white;
   border: none;
   border-radius: 5px;
@@ -113,14 +119,14 @@ h2 {
 }
 
 .btn:hover {
-  background-color: #218838;
+  background-color: #2b517c;
 }
 
 .btn-danger {
   width: 100%;
   padding: 10px;
   font-size: 16px;
-  background-color: #dc3545;
+  background-color: #c82333;
   color: white;
   border: none;
   border-radius: 5px;
@@ -130,7 +136,7 @@ h2 {
 }
 
 .btn-danger:hover {
-  background-color: #c82333;
+  background-color: #8d2630;
 }
 
 .message-box {

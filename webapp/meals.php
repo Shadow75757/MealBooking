@@ -131,12 +131,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="meal-box">
             <h2>Today's Meal: <?php echo htmlspecialchars($meal['name']); ?></h2>
             <img src="<?php echo htmlspecialchars($meal['image_url']); ?>" alt="Meal Image">
-            <p><strong>Price:</strong> $<?php echo htmlspecialchars($meal['price']); ?></p>
+            <p><strong>Price:</strong> <?php echo htmlspecialchars($meal['price']); ?>€</p>
 
             <?php if ($has_booked): ?>
-                <p><strong>Your Booking:</strong></p>
                 <form id="update-observation-form">
-                    <textarea name="observation"><?php echo htmlspecialchars($booking['observation']); ?></textarea>
+                    <textarea name="observation" placeholder=" - Add here your observation"><?php echo htmlspecialchars($booking['observation']); ?></textarea>
                     <button type="submit" class="btn">Update Observation</button>
                 </form>
                 <form id="cancel-booking-form">

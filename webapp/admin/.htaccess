@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L]
+
+# Block direct access to admin folder for non-admin users
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} ^/MealBooking/webapp/admin/ [NC]
+    RewriteCond %{HTTP_COOKIE} !PHPSESSID
+    RewriteRule ^.*$ /MealBooking/webapp/ [R=302,L]
+</IfModule>

@@ -118,7 +118,8 @@ h1 {
   border-radius: 8px;
   text-align: center;
   width: 30%;
-  box-shadow: 2px 1px 1px gray;
+  box-shadow: 3px 3px 2px gray;
+  border: solid 1px;
 }
 
 .card h3 {
@@ -163,7 +164,7 @@ th i {
 
 /* Header Navigation Styling */
 header {
-  background-color: #4caf50;
+  background-color: #3f6fa7;
   padding: 15px 0;
   margin-bottom: 20px;
 }
@@ -189,6 +190,6 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  background-color: #45a049;
+  background-color: #2b517c;
   border-radius: 5px;
 }
